@@ -1,0 +1,27 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Footer from "@/components/Footer.astro";
+import IntroInfo from "@/components/IntroInfo.astro"
+
+import { getI18N } from "@/i18n";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+---
+
+<Layout title={i18n.SEO_TITLE} description={i18n.SEO_DESCRIPTION}>
+
+    <div
+        class="absolute left-0 top-0 w-full h-full cp-v
+        bg-cover bg-no-repeat -z-10"
+        style="background-image: url('/ESLAND_WALLPAPER_06.png')"
+    >
+    </div>
+
+    <main>
+        <IntroInfo />
+    </main>
+    <Footer />
+
+    
+</Layout>
