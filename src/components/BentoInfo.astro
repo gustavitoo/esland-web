@@ -1,0 +1,78 @@
+---
+import BentoItemInfo from "./BentoItemInfo.astro";
+import { getI18N } from "@/i18n/";
+
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
+---
+
+<section
+  class={`
+    w-full max-w-[1400px]
+    grid lg:grid-cols-10 auto-rows-[30rem]
+    mx-auto p-6 md:p-12 lg:p-20 gap-y-48
+  `}
+>
+
+    <BentoItemInfo class="col-span-5 md:col-span-5">
+        <div
+        slot="image"
+        class="col-span-4 absolute left-0 top-0 bottom-0 w-full shadow-md
+            h-full group-hover:scale-110 transition-scale duration-1000
+            ease-in-out bg-center bg-cover bg-no-repeat -z-10 rounded-l-xl"
+        style="background-image: url('/info-img1.png')"
+        >
+        </div>
+    </BentoItemInfo>
+    <div 
+        class="col-span-5 bg-gradient-to-b from-transparent from-40% via-[#151836]/50 to-[#151836]/80
+            shadow-sm shadow-white/20 p-6 rounded-r-xl"
+    >
+        
+        <p
+          class="text-base md:text-2xl max-w-xl font-bold"
+          set:html={i18n.BENTO_INFO_TITLE_1}
+        />
+
+        <p
+          class="text-base md:text-lg max-w-xl"
+          set:html={i18n.BENTO_INFO_CONTENT_1_1}
+        />
+        <p
+          class="text-base md:text-lg max-w-xl"
+          set:html={i18n.BENTO_INFO_CONTENT_1_2}
+        />
+    </div>
+
+    <div 
+      class="col-span-5 bg-gradient-to-b from-transparent from-40% via-[#151836]/50 to-[#151836]/80
+          shadow-sm shadow-white/20 p-6 rounded-l-xl"
+  >
+      
+      <p
+        class="text-base md:text-2xl max-w-xl font-bold"
+        set:html={i18n.BENTO_INFO_TITLE_2}
+      />
+
+      <p
+        class="text-base md:text-lg max-w-xl"
+        set:html={i18n.BENTO_INFO_CONTENT_2_1}
+      />
+      <p
+        class="text-base md:text-lg max-w-xl"
+        set:html={i18n.BENTO_INFO_CONTENT_2_2}
+      />
+  </div>
+
+    <BentoItemInfo class="col-span-5 md:col-span-5">
+      <div
+      slot="image"
+      class="col-span-5 absolute left-0 top-0 bottom-0 w-full shadow-md border-r-xl
+          h-full group-hover:scale-110 transition-scale duration-1000
+          ease-in-out bg-center bg-cover bg-no-repeat -z-10  rounded-r-xl"
+      style="background-image: url('/info-img4.png')"
+      >
+      </div>
+  </BentoItemInfo>
+
+</section>
